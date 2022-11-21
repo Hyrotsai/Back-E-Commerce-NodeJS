@@ -5,7 +5,7 @@ info:
     This is my first project back and documenting in yaml be patient
 
     _lorem ipsum!_
-    
+
   version: 1.0.0
 
 servers:
@@ -27,17 +27,17 @@ paths:
       summary: Return categories
       description: Return categories
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Category'          
+                $ref: "#/components/schemas/Category"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Category'
-        '500':
-          description: 'false'
+                $ref: "#/components/schemas/Category"
+        "500":
+          description: "false"
     post:
       tags:
         - categories
@@ -49,25 +49,25 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Category'
+              $ref: "#/components/schemas/Category"
           application/xml:
             schema:
-              $ref: '#/components/schemas/Category'
+              $ref: "#/components/schemas/Category"
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Category'
+              $ref: "#/components/schemas/Category"
         required: true
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Category'          
+                $ref: "#/components/schemas/Category"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Category'
-        '404':
+                $ref: "#/components/schemas/Category"
+        "404":
           description: The category cannot be created!
       security:
         - petstore_auth:
@@ -89,16 +89,16 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Category'          
+                $ref: "#/components/schemas/Category"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Category'
-        '500':
+                $ref: "#/components/schemas/Category"
+        "500":
           description: The category with the given ID was not found
       security:
         - api_key: []
@@ -109,7 +109,7 @@ paths:
       tags:
         - categories
       summary: Updates a category by ID
-      description: ''
+      description: ""
       operationId: updatePetWithForm
       parameters:
         - name: categoriesId
@@ -125,18 +125,18 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Category'
+                $ref: "#/components/schemas/Category"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Category'          
+                $ref: "#/components/schemas/Category"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Category'
-        '405':
+                $ref: "#/components/schemas/Category"
+        "405":
           description: Invalid input
       security:
         - petstore_auth:
@@ -146,7 +146,7 @@ paths:
       tags:
         - categories
       summary: Delete a category by ID
-      description: ''
+      description: ""
       parameters:
         - name: categoriesId
           in: path
@@ -156,11 +156,11 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: The category deleted
-        '400':
+        "400":
           description: Category not found!
-        '404':
+        "404":
           description: Error Message
       security:
         - petstore_auth:
@@ -171,20 +171,20 @@ paths:
       tags:
         - orders
       summary: Returns orders
-      description: Returns orders 
+      description: Returns orders
       operationId: getInventory
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Order'          
+                $ref: "#/components/schemas/Order"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Order'
-        '500':
-          description: 'False'
+                $ref: "#/components/schemas/Order"
+        "500":
+          description: "False"
       security:
         - api_key: []
     post:
@@ -198,18 +198,18 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Order'
+                $ref: "#/components/schemas/Order"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Order'          
+                $ref: "#/components/schemas/Order"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Order'
-        '404':
+                $ref: "#/components/schemas/Order"
+        "404":
           description: The order cannot be created!
       security:
         - api_key: []
@@ -229,16 +229,16 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Order'          
+                $ref: "#/components/schemas/Order"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Order'
-        '500':
+                $ref: "#/components/schemas/Order"
+        "500":
           description: Order not found
     put:
       tags:
@@ -259,18 +259,18 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Order'
+                $ref: "#/components/schemas/Order"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Order'          
+                $ref: "#/components/schemas/Order"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Order'
-        '404':
+                $ref: "#/components/schemas/Order"
+        "404":
           description: The order cannot be created!
     delete:
       tags:
@@ -287,11 +287,11 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: The order deleted
-        '400':
+        "400":
           description: Error
-        '404':
+        "404":
           description: Order not found!
   /orders/get/totalsales:
     get:
@@ -301,9 +301,9 @@ paths:
       description: Returns totalsales
       operationId: getInventory2
       responses:
-        '200':
+        "200":
           description: totalsales
-        '400':
+        "400":
           description: The order sales cannot be generated
       security:
         - api_key: []
@@ -315,10 +315,10 @@ paths:
       description: Return count
       operationId: placeOrder2
       responses:
-        '200':
+        "200":
           description: order count
-        '500':
-          description: 'False'
+        "500":
+          description: "False"
   /orders/get/userorders/{userId}:
     get:
       tags:
@@ -335,17 +335,17 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Order'          
+                $ref: "#/components/schemas/Order"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Order'
-        '500':
-          description: 'False'
+                $ref: "#/components/schemas/Order"
+        "500":
+          description: "False"
   /products:
     get:
       tags:
@@ -354,16 +354,16 @@ paths:
       description: Return product
       operationId: createUser
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '500':
+                $ref: "#/components/schemas/Product"
+        "500":
           description: Error
     post:
       tags:
@@ -376,18 +376,18 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '500':
+                $ref: "#/components/schemas/Product"
+        "500":
           description: The product connot be created
   /products/{productId}:
     get:
@@ -404,17 +404,17 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '500':
-          description: 'False'
+                $ref: "#/components/schemas/Product"
+        "500":
+          description: "False"
     put:
       tags:
         - products
@@ -434,24 +434,24 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '400':
+                $ref: "#/components/schemas/Product"
+        "400":
           description: Invalid Product Id
-        '401':
+        "401":
           description: Invalid Category
-        '402':
+        "402":
           description: Invalid product
-        '504':
+        "504":
           description: The product cannot be created!
     delete:
       tags:
@@ -467,11 +467,11 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: The product deleted
-        '404':
+        "404":
           description: product not found!
-        '400':
+        "400":
           description: Error
   /products/get/count:
     get:
@@ -480,17 +480,17 @@ paths:
       summary: Return product count
       description: Return product count
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '500':
-          description: 'False'
+                $ref: "#/components/schemas/Product"
+        "500":
+          description: "False"
   /products//get/featured/{count}:
     get:
       tags:
@@ -506,17 +506,17 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '500':
-          description: 'False'
+                $ref: "#/components/schemas/Product"
+        "500":
+          description: "False"
   /product/gally-image{productId}:
     put:
       tags:
@@ -537,20 +537,20 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Product'
+                $ref: "#/components/schemas/Product"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'          
+                $ref: "#/components/schemas/Product"
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
-        '400':
+                $ref: "#/components/schemas/Product"
+        "400":
           description: Invalid Product Id
-        '504':
+        "504":
           description: The product cannot be created!
   /users:
     get:
@@ -560,17 +560,18 @@ paths:
       description: Return user list
       operationId: createUsersWithListInput
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'          
+                $ref: "#/components/schemas/User"
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
-        '500':
-          description: 'False'
+                $ref: "#/components/schemas/User"
+        "500":
+          description: "False"
+  /users/register:
     post:
       tags:
         - user
@@ -582,18 +583,18 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'          
+                $ref: "#/components/schemas/User"
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
-        '404':
+                $ref: "#/components/schemas/User"
+        "404":
           description: The user cannot be created!
   /users/{usersId}:
     get:
@@ -610,16 +611,16 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'          
+                $ref: "#/components/schemas/User"
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
-        '500':
+                $ref: "#/components/schemas/User"
+        "500":
           description: The user with the given ID was not found
     put:
       tags:
@@ -640,25 +641,25 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'          
+                $ref: "#/components/schemas/User"
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
-        '404':
+                $ref: "#/components/schemas/User"
+        "404":
           description: The user cannot be created!
   /user/login:
     get:
       tags:
         - user
       summary: Logs user into the system
-      description: ''
+      description: ""
       operationId: loginUser
       parameters:
         - name: username
@@ -674,7 +675,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: successful operation
           headers:
             X-Rate-Limit:
@@ -694,9 +695,9 @@ paths:
             application/json:
               schema:
                 type: string
-        '400':
+        "400":
           description: The user not found!
-        '401':
+        "401":
           description: Password is wrong!
   /user/register:
     post:
@@ -710,17 +711,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
           application/xml:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
       responses:
-        '200':
+        "200":
           description: User created
-        '400':
+        "400":
           description: The user cannot be created
   /user/{userId}:
     delete:
@@ -737,11 +738,11 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: The user deleted
-        '400':
+        "400":
           description: Error
-        '404':
+        "404":
           description: user not found!
   /user/get/count:
     get:
@@ -750,10 +751,10 @@ paths:
       summary: Return User count
       description: Return User count
       responses:
-        '200':
+        "200":
           description: User Count
-        '500':
-          description: 'False'
+        "500":
+          description: "False"
 components:
   schemas:
     Category:
@@ -781,7 +782,7 @@ components:
         product:
           type: array
           items:
-            $ref: '#/components/schemas/Product'
+            $ref: "#/components/schemas/Product"
       xml:
         name: order-item
     Order:
@@ -793,7 +794,7 @@ components:
             name: product
             wrapped: true
           items:
-            $ref: '#/components/schemas/Order-item'
+            $ref: "#/components/schemas/Order-item"
         shippingAddress1:
           type: string
           example: 437 Lytton
@@ -805,7 +806,7 @@ components:
           example: Cartagena
         zip:
           type: string
-          example: '94301'
+          example: "94301"
         country:
           type: string
           example: Colombia
@@ -814,11 +815,11 @@ components:
           example: Pending
         totalPrice:
           type: string
-          example: '150000'
+          example: "150000"
         user:
           type: array
           items:
-            $ref: '#/components/schemas/User'
+            $ref: "#/components/schemas/User"
         dateOrdered:
           type: integer
           default: Date.now
@@ -842,25 +843,25 @@ components:
           example: Product richDescription
         image:
           type: string
-          default: ''
+          default: ""
         images:
           type: array
           xml:
             name: user
             wrapped: true
           items:
-            default: ''
+            default: ""
         brand:
           type: string
           example: Adidas
-          default: ''
+          default: ""
         price:
           type: number
           example: 100
         category:
           type: array
           items:
-            $ref: '#/components/schemas/Category'
+            $ref: "#/components/schemas/Category"
         countInStock:
           type: number
           example: between 0 and 255
@@ -920,10 +921,10 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Category'
+            $ref: "#/components/schemas/Category"
         application/xml:
           schema:
-            $ref: '#/components/schemas/User'
+            $ref: "#/components/schemas/User"
     UserArray:
       description: List of user object
       content:
@@ -931,7 +932,7 @@ components:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
   securitySchemes:
     petstore_auth:
       type: oauth2
